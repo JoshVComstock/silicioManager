@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npx create-next-app@latest techpulse --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx shadcn@latest add badge input separator sheet dropdown-menu navigation-menu)",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); const icons = Object.keys\\(lr\\).filter\\(k => ['Twitter','Linkedin','Github','X','GitBranch','GitFork'].includes\\(k\\)\\); console.log\\(icons\\)\")",
+      "Bash(npm run *)",
+      "Bash(dotnet publish *)",
+      "Bash(dotnet --list-runtimes)",
+      "Bash(mkdir -p \"./publish/Uploads\" \"./publish/logs\")",
+      "Bash(touch \"./publish/Uploads/.gitkeep\" \"./publish/logs/.gitkeep\")",
+      "Bash(xxd)",
+      "Bash(ConnectionStrings__PostgreSQLConnection=\"Server=switchback.proxy.rlwy.net;Port=10353;Database=railway;User Id=postgres;Password=OXXwEvQOQKfXcRSJArZJaWqebCDkHcDt;SSL Mode=Require;Trust Server Certificate=true;\" dotnet ef database update)",
+      "Bash(dotnet build *)",
+      "Bash(taskkill //F //PID 24876)",
+      "Bash(taskkill //F //IM server.exe)",
+      "Bash(ConnectionStrings__PostgreSQLConnection=\"Server=switchback.proxy.rlwy.net;Port=10353;Database=railway;User Id=postgres;Password=OXXwEvQOQKfXcRSJArZJaWqebCDkHcDt;SSL Mode=Require;Trust Server Certificate=true;\" ASPNETCORE_URLS=\"http://localhost:5099\" dotnet run seeddata)",
+      "Bash(tasklist)",
+      "Bash(taskkill //F //IM dotnet.exe)",
+      "Bash(firebase projects:list)",
+      "Bash(firebase use *)",
+      "Bash(npx vite *)",
+      "Bash(firebase deploy *)",
+      "Bash(rm -f pages/BlogPage.tsx pages/PostPage.tsx pages/HomePage.tsx pages/AboutPage.tsx services/postService.ts hooks/usePosts.ts constants/mockPosts.ts constants/routes.ts context/ThemeContext.tsx types/post.ts utils/formatDate.ts)",
+      "Bash(rm -rf components/layout components/ui hooks constants utils)",
+      "Bash(mkdir -p \"D:/Emprendimiento/Blog/server\")",
+      "Bash(npm init *)",
+      "Bash(npx prisma *)"
+    ]
+  }
+}
