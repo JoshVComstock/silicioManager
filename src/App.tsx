@@ -3,6 +3,7 @@ import LoginPage from './pages/admin/LoginPage';
 import DashboardPage from './pages/admin/DashboardPage';
 import ArticlesPage from './pages/admin/ArticlesPage';
 import ArticleFormPage from './pages/admin/ArticleFormPage';
+import QueuePage from './pages/admin/QueuePage';
 import LogsPage from './pages/admin/LogsPage';
 import UsersPage from './pages/admin/UsersPage';
 import SettingsPage from './pages/admin/SettingsPage';
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/admin/articles" element={<ArticlesPage />} />
             <Route path="/admin/articles/new" element={<ArticleFormPage />} />
             <Route path="/admin/articles/:id/edit" element={<ArticleFormPage />} />
+            <Route path="/admin/queue" element={<QueuePage />} />
             <Route path="/admin/logs" element={<LogsPage />} />
             <Route path="/admin/users" element={<UsersPage />} />
             <Route path="/admin/settings" element={<SettingsPage />} />

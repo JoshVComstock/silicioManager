@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   FileText,
+  ListTodo,
   ScrollText,
   Users,
   Settings,
@@ -13,6 +14,7 @@ import { useAuth } from '../../context/AuthContext';
 const NAV_ITEMS = [
   { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/admin/articles', label: 'Artículos', icon: FileText },
+  { to: '/admin/queue', label: 'Cola del agente', icon: ListTodo },
   { to: '/admin/logs', label: 'Logs del agente', icon: ScrollText },
   { to: '/admin/users', label: 'Usuarios', icon: Users },
   { to: '/admin/settings', label: 'Ajustes', icon: Settings },
