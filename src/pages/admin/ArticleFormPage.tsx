@@ -13,7 +13,6 @@ import {
   useCreateArticleMutation,
   useUpdateArticleMutation,
 } from '../../features/articles/articlesApiSlice';
-import { useAuth } from '../../context/AuthContext';
 import type {
   CategorySlug,
   ArticleStatus,
