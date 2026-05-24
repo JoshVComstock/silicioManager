@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Search, Pencil, Trash2, ExternalLink, Loader2, AlertCircle } from 'lucide-react';
+import { Plus, Search, Pencil, Trash2, ExternalLink, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import PageHeader from '../../components/admin/PageHeader';
 import { Table } from '../../components/admin/Table';
 import { ArticleStatusBadge } from '../../components/admin/StatusBadge';
+import GenerateArticleModal from '../../components/admin/GenerateArticleModal';
 import {
   useGetArticlesQuery,
   useDeleteArticleMutation,
@@ -34,6 +35,7 @@ const BLOG_BASE_URL = import.meta.env.VITE_BLOG_URL ?? 'http://localhost:3000';
 
 const ArticlesPage = () => {
   const [search, setSearch] = useState('');
+  const [generateOpen, setGenerateOpen] = useState(false);
   const navigate = useNavigate();
 
   const { data, isLoading, isFetching, error } = useGetArticlesQuery(
@@ -59,13 +61,22 @@ const ArticlesPage = () => {
         title="Artículos"
         description="Gestiona los artículos publicados, programados y en borrador."
         actions={
-          <button
-            onClick={() => navigate('/admin/articles/new')}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors cursor-pointer"
-          >
-            <Plus className="h-4 w-4" />
-            Nuevo artículo
-          </button>
+          <>
+            <button
+              onClick={() => setGenerateOpen(true)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer shadow-lg shadow-indigo-500/20"
+            >
+              <Sparkles className="h-4 w-4" />
+              Generar con IA
+            </button>
+            <button
+              onClick={() => navigate('/admin/articles/new')}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface border border-border text-sm font-medium hover:bg-white/5 transition-colors cursor-pointer"
+            >
+              <Plus className="h-4 w-4" />
+              Nuevo
+            </button>
+          </>
         }
       />
 
@@ -187,6 +198,12 @@ const ArticlesPage = () => {
           )}
         </>
       )}
+
+      <GenerateArticleModal
+        open={generateOpen}
+        onClose={() => setGenerateOpen(false)}
+        onSuccess={(id) => navigate(`/admin/articles/${id}/edit`)}
+      />
     </>
   );
 };
