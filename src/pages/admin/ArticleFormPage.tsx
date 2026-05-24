@@ -108,7 +108,6 @@ const ArticleFormPage = () => {
   const { id } = useParams<{ id?: string }>();
   const isEdit = Boolean(id);
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [tagInput, setTagInput] = useState('');
