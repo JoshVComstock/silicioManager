@@ -13,7 +13,7 @@ const LoginPage = () => {
   const location = useLocation();
   const from = (location.state as LocationState)?.from?.pathname ?? '/admin';
 
-  const [email, setEmail] = useState('admin@silicio.tech');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
